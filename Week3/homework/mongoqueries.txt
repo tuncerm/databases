@@ -1,0 +1,45 @@
+db.cities.insertOne({"Name":"Trabzon", "CountryCode":"TR"});
+db.cities.updateOne({"Name":"Trabzon", "CountryCode":"TR"}, {$set:{"Population":500000}});
+db.cities.findOne({"Name":"Trabzon", "CountryCode":"TR"});
+db.cities.deleteOne({{"Name":"Trabzon", "CountryCode":"TR"}});
+
+
+// Amongst the countries with more than 50% Arabic speakers, what is the average percentage Arabic speakers?
+db.countryLanguages.aggregate(
+  [
+    { 
+      $match: {'Language': 'Arabic', 'Percentage' : {$gt: 50}}
+    },
+    {
+      $group: {
+        _id: "$Language",
+        avgAmount: { $avg: 'Percentage' }
+      }
+    }
+  ]
+);
+
+// List the top 10 cities of Western Europe in descending order of population.
+db.countries.aggregate([
+  {
+    $match: {
+      'Region': 'Western Europe'
+    }
+  },
+  {
+    $lookup: {
+      from: "cities",
+      localField: "Code",
+      foreignField: "CountryCode",
+      as: "theCities"
+    }
+  },
+  {
+    $replaceRoot: { newRoot: { $mergeObjects: [ { $arrayElemAt: [ "$theCities", 0 ] }, "$$ROOT" ] } }
+  },
+  { $sort: { 'Population': -1 }},
+  { $limit : 10 },
+  { $project: { theCities: 0 }}
+]);
+
+// I did not have a database to test the queries on. But I think they should work. 

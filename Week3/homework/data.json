@@ -1,0 +1,33 @@
+{
+    "employee": [
+        { "emp_no": 101, "emp_name": "Pikachu", "salary": 1100, "works_at": 101, "reports_to": null },
+        { "emp_no": 102, "emp_name": "Squirtle", "salary": 150, "works_at": 103, "reports_to": 101 },
+        { "emp_no": 103, "emp_name": "Balbasour", "salary": 160, "works_at": 101, "reports_to": 101 },
+        { "emp_no": 104, "emp_name": "Charmender", "salary": 175, "works_at": 104, "reports_to": 101 },
+        { "emp_no": 105, "emp_name": "Ratata", "salary": 115, "works_at": 102, "reports_to": 102 },
+        { "emp_no": 106, "emp_name": "Caterpie", "salary": 123, "works_at": 104, "reports_to": 102 },
+        { "emp_no": 107, "emp_name": "Weedle", "salary": 125, "works_at": 101, "reports_to": 102 },
+        { "emp_no": 108, "emp_name": "Pidgey", "salary": 120, "works_at": 101, "reports_to": 103 },
+        { "emp_no": 109, "emp_name": "Nidoran", "salary": 110, "works_at": 102, "reports_to": 103 },
+        { "emp_no": 110, "emp_name": "Jigglypuff", "salary": 110, "works_at": 103, "reports_to": 104 }
+    ], 
+    "department": [
+        { "dept_no": 101, "title": "Cartoon", "description" : "desc", "address": "addr" },
+        { "dept_no": 102, "title": "Customer Service", "description" : "desc", "address": "addr" },
+        { "dept_no": 103, "title": "Anime", "description" : "desc", "address": "addr" },
+        { "dept_no": 104, "title": "Manga", "description" : "desc", "address": "addr" },
+        { "dept_no": 105, "title": "Light Novel", "description" : "desc", "address": "addr" },
+        { "dept_no": 106, "title": "Marketing", "description" : "desc", "address": "addr" },
+        { "dept_no": 107, "title": "Movies", "description" : "desc", "address": "addr" },
+        { "dept_no": 108, "title": "Advertising", "description" : "desc", "address": "addr" },
+        { "dept_no": 109, "title": "Production", "description" : "desc", "address": "addr" },
+        { "dept_no": 110, "title": "Accounting", "description" : "desc", "address": "addr" }
+    ],
+    "employee_skill":[
+        {"emp_no": 101, "skill": "Jumping"},
+        {"emp_no": 101, "skill": "Skipping"},
+        {"emp_no": 102, "skill": "Climbing"},
+        {"emp_no": 103, "skill": "Jumping"},
+        {"emp_no": 102, "skill": "Hopping"}
+    ]
+}
